@@ -20,10 +20,6 @@ public enum Level {
         return this.value;
     };
 
-    // public Double applyBonus(Double wage) {
-    //     return (1.05d + (0.05d * this.value)) * wage;
-    // };
-
     public Level fromValue(Integer value) {
         for (Level level : Level.values()) {
             if (level.getValue() == value) {

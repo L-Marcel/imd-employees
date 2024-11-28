@@ -12,13 +12,10 @@ public abstract class Person implements Serializable {
     private Genrer genrer;
     private Address address;
     private Long registration;
-    protected Double wage;
+    private Double wage;
     private String department;
     private Integer workload;
     private LocalDate joinedAt;
-
-    // [TODO] Remove it
-    public Person() {}
 
     public Person(
         String name, 
@@ -92,7 +89,9 @@ public abstract class Person implements Serializable {
         this.registration = registration;
     };
 
-    public abstract Double getWage();
+    public Double getWage() {
+        return this.wage;
+    };
 
     public void setWage(Double wage) {
         this.wage = wage;
