@@ -1,6 +1,7 @@
 package src.persons;
 
 import src.core.Storable;
+import src.persons.common.Person;
 
 public class Persons extends Storable<Person> {
     private static Persons instance;

@@ -1,6 +1,7 @@
 import pretty.Router;
 import src.ShutdownHook;
 import src.pages.MainPage;
+import src.persons.models.Teacher;
 
 public class Main {
     public static void main(String[] args) {
