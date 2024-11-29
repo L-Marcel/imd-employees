@@ -51,7 +51,7 @@ public class AddTeacherPage implements Page {
             )
         );
         Long registration = menu.getLong(
-            "Matricula: ", 
+            "Matrícula: ", 
             (t) -> Registrations.validate(t)
         );
         LocalDate birthdate = Dates.fromString(
@@ -166,10 +166,7 @@ public class AddTeacherPage implements Page {
                     disciplines.decrement(teacherDisciplinesArray);
                     break;
                 } case 0: {
-                    LinkedHashMap<String, Integer> disciplinesMap = disciplines.get();
-                    String[] mappedDisicplines = disciplinesMap
-                        .sequencedKeySet()
-                        .toArray(String[]::new);
+                    String[] mappedDisicplines = disciplines.getArray();
 
                     ArrayList<String> availableDisciplines = new ArrayList<String>(
                         mappedDisicplines.length

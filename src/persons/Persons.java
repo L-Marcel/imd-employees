@@ -2,6 +2,7 @@ package src.persons;
 
 import src.core.StorableList;
 import src.persons.common.Person;
+import src.persons.models.AdministrativeTechnician;
 import src.persons.models.Teacher;
 
 public class Persons extends StorableList<Person> {

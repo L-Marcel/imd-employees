@@ -62,7 +62,6 @@ public class Teacher extends Person implements Employee {
         out.writeShort(this.graduation.getValue());
         out.writeObject(this.disciplines);
     };
-
     
     @Override
     @SuppressWarnings("unchecked")
@@ -71,7 +70,6 @@ public class Teacher extends Person implements Employee {
         this.level = Level.fromValue(Short.toUnsignedInt(in.readShort()));
         this.graduation = Graduation.fromValue(Short.toUnsignedInt(in.readShort()));
         this.disciplines = (ArrayList<String>) in.readObject();
-        in.close();
     };
 
     @Override
@@ -84,6 +82,7 @@ public class Teacher extends Person implements Employee {
         return (0.25d + (0.25d * this.graduation.getValue())) * this.getWage();
     };
 
+    // [QUESTION] Is really a sum here?
     @Override
     public Double getWageWithBonus() {
         return this.getWage() + 

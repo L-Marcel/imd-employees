@@ -1,7 +1,14 @@
-[29/11/2024 - 17:30:16]:[Main] Navigating to main page.
-[29/11/2024 - 17:30:17]:[Main] Navigating to add teacher page.
-[29/11/2024 - 17:30:17]:[Storage] Starting...
-[29/11/2024 - 17:30:17]:[Storage] Started.
-[29/11/2024 - 17:30:17]:[Storable] Creating disciplines database.
-[29/11/2024 - 17:30:51]:[Storage] Finishing...
-[29/11/2024 - 17:30:51]:[Storage] Finished.
+[29/11/2024 - 19:55:22]:[Main] Navigating to main page.
+[29/11/2024 - 19:55:24]:[Main] Navigating to search teacher page.
+[29/11/2024 - 19:55:25]:[Storage] Starting...
+[29/11/2024 - 19:55:25]:[Storage] Started.
+[29/11/2024 - 19:55:25]:[Storable] Failed on load persons.
+[29/11/2024 - 19:55:25]:[Error] Stream Closed
+[29/11/2024 - 19:55:25]:[Storable] Creating persons database.
+[29/11/2024 - 19:55:39]:[Main] Navigating to main page.
+[29/11/2024 - 19:55:46]:[Main] Navigating to teachers page.
+[29/11/2024 - 19:55:46]:[Storable] Loadded 5 disciplines.
+[29/11/2024 - 19:55:48]:[Main] Navigating to main page.
+[29/11/2024 - 19:55:51]:[Main] Navigating to teachers page.
+[29/11/2024 - 19:56:15]:[Storage] Finishing...
+[29/11/2024 - 19:56:15]:[Storage] Finished.

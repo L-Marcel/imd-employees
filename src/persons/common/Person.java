@@ -152,4 +152,11 @@ public abstract class Person implements Externalizable {
     public void setJoinedAt(LocalDate joinedAt) {
         this.joinedAt = joinedAt;
     };
+
+    @Override
+    public String toString() {
+        return this.name
+            + "\n  CPF: " + this.cpf
+            + "\n  Matrícula: " + this.registration.toString();
+    };
 };

@@ -1,5 +1,7 @@
 package src.persons;
 
+import java.util.LinkedHashMap;
+
 import pretty.errors.InvalidInput;
 import src.core.StorableMap;
 
@@ -48,5 +50,12 @@ public class Disciplines extends StorableMap<String, Integer> {
     public void validate(String discipline) throws InvalidInput {
         int result = this.get().getOrDefault(discipline, 0);
         if (result > 0) throw new InvalidInput("Essa disciplina já existe!");
+    };
+
+    public String[] getArray() {
+        Disciplines disciplines = Disciplines.getInstance();
+        return disciplines.get()
+            .sequencedKeySet()
+            .toArray(String[]::new);
     };
 };

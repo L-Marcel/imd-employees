@@ -12,6 +12,13 @@ public class MainPage implements Page {
         
         String[] options = {
             "Cadastrar professor",
+            "Cadastrar técnico administrativo",
+            "Listar professores",
+            "Lista técnicos administrativos",
+            "Buscar professor",
+            "Buscar técnico administrativo",
+            "Remover professor",
+            "Remover técnico administrativo",
             "Informações",
         };
         
@@ -28,6 +35,27 @@ public class MainPage implements Page {
                 router.navigate(new AddTeacherPage());
                 break;
             case 1:
+                router.navigate(new AddAdministrativeTechnicianPage());
+                break;
+            case 2:
+                router.navigate(new TeachersPage());
+                break;
+            case 3:
+                router.navigate(new AdministrativeTechniciansPage());
+                break;
+            case 4:
+                router.navigate(new SearchTeacherPage());
+                break;
+            case 5:
+                router.navigate(new SearchAdministrativeTechnicianPage());
+                break;
+            case 6:
+                router.navigate(new RemoveTeacherPage());
+                break;
+            case 7:
+                router.navigate(new RemoveAdministrativeTechnicianPage());
+                break;
+            case 8:
                 router.navigate(new InfomationPage());
                 break;
             default:

@@ -31,6 +31,7 @@ public class AdministrativeTechnician extends Person implements Employee {
         Integer workload, 
         LocalDate joinedAt, 
         Level level,
+        Graduation graduation,
         Boolean unhealthiness, 
         Boolean gratification
     ) {
@@ -47,6 +48,7 @@ public class AdministrativeTechnician extends Person implements Employee {
             joinedAt
         );
         this.level = level;
+        this.graduation = graduation;
         this.unhealthiness = unhealthiness;
         this.gratification = gratification;
     };
@@ -59,7 +61,6 @@ public class AdministrativeTechnician extends Person implements Employee {
         out.writeBoolean(this.unhealthiness);
         out.writeBoolean(this.gratification);
     };
-
     
     @Override
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
@@ -68,7 +69,6 @@ public class AdministrativeTechnician extends Person implements Employee {
         this.graduation = Graduation.fromValue(Short.toUnsignedInt(in.readShort()));
         this.unhealthiness = in.readBoolean();
         this.gratification = in.readBoolean();
-        in.close();
     };
 
     public Double getUnhealthinessBonus() {
@@ -91,6 +91,7 @@ public class AdministrativeTechnician extends Person implements Employee {
         return (0.25d + (0.25d * this.graduation.getValue())) * this.getWage();
     };
 
+    // [QUESTION] Is really a sum here?
     @Override
     public Double getWageWithBonus() {
         return this.getWage() + 

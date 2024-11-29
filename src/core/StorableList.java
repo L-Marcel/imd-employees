@@ -37,6 +37,7 @@ public abstract class StorableList<T extends Serializable> implements Serializab
             Log.print("Storable", "Creating " + this.name + " database.");
             this.instances = new LinkedList<T>();
         } catch (Exception e) {
+            // [TODO] Fix stream closed
             Log.print("Storable", "Failed on load " + this.name + ".");
             Log.print("Error", e.getMessage());
             Log.print("Storable", "Creating " + this.name + " database.");
