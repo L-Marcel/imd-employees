@@ -1,28 +1,28 @@
 package src.persons.enums;
 
 public enum Level {
-    I(0),
-    II(1),
-    III(2),
-    IV(3),
-    V(4),
-    VI(5),
-    VII(6),
-    VIII(7);
+    I((short) 0),
+    II((short) 1),
+    III((short) 2),
+    IV((short) 3),
+    V((short) 4),
+    VI((short) 5),
+    VII((short) 6),
+    VIII((short) 7);
 
-    private Integer value = 0;
+    private Short value = 0;
     
-    private Level(Integer value) {
+    private Level(Short value) {
         this.value = value;
     };
 
-    public Integer getValue() {
+    public Short getValue() {
         return this.value;
     };
 
-    public Level fromValue(Integer value) {
+    public static Level fromValue(Integer value) {
         for (Level level : Level.values()) {
-            if (level.getValue() == value) {
+            if (Short.toUnsignedInt(level.getValue()) == value) {
                 return level;
             };
         };

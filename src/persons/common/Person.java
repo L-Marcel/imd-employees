@@ -1,11 +1,14 @@
 package src.persons.common;
 
-import java.io.Serializable;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 import java.time.LocalDate;
 
 import src.persons.enums.Genrer;
 
-public abstract class Person implements Serializable {
+public abstract class Person implements Externalizable {
     private String name;
     private String cpf;
     private LocalDate birthdate;
@@ -17,6 +20,7 @@ public abstract class Person implements Serializable {
     private Integer workload;
     private LocalDate joinedAt;
 
+    public Person() {};
     public Person(
         String name, 
         String cpf, 
@@ -39,6 +43,34 @@ public abstract class Person implements Serializable {
         this.department = department;
         this.workload = workload;
         this.joinedAt = joinedAt;
+    };
+
+    @Override
+    public void writeExternal(ObjectOutput out) throws IOException {
+        out.writeUTF(this.name);
+        out.writeUTF(this.cpf);
+        out.writeObject(this.birthdate);
+        out.writeShort(this.genrer.getValue());
+        out.writeObject(this.address);
+        out.writeLong(this.registration);
+        out.writeDouble(this.wage);
+        out.writeUTF(this.department);
+        out.writeInt(this.workload);
+        out.writeObject(this.joinedAt);
+    };
+
+    @Override
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+        this.name = in.readUTF();
+        this.cpf = in.readUTF();
+        this.birthdate = (LocalDate) in.readObject();
+        this.genrer = Genrer.fromValue(Short.toUnsignedInt(in.readShort()));
+        this.address = (Address) in.readObject();
+        this.registration = in.readLong();
+        this.wage = in.readDouble();
+        this.department = in.readUTF();
+        this.workload = in.readInt();
+        this.joinedAt = (LocalDate) in.readObject();
     };
 
     public String getName() {

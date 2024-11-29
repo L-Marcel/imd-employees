@@ -1,6 +1,8 @@
 package src.persons.common;
 
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable {
     private String street;
     private Integer number;
     private String district;

@@ -4,7 +4,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Semaphore;
 
 import src.log.Log;
-import java.util.LinkedList;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 import java.io.Serializable;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
@@ -20,7 +24,7 @@ public class Storage extends Thread {
     private boolean running = false;
     private ConcurrentHashMap<String, ObjectOutputStream> streams = new ConcurrentHashMap<String, ObjectOutputStream>();
     private ConcurrentHashMap<String, Integer> tasks = new ConcurrentHashMap<String, Integer>();
-    private ConcurrentHashMap<String, LinkedList<Serializable>> map = new ConcurrentHashMap<String, LinkedList<Serializable>>(); 
+    private ConcurrentHashMap<String, Serializable> map = new ConcurrentHashMap<String, Serializable>(); 
 
     //#region Singleton
     private Storage() {
@@ -73,12 +77,11 @@ public class Storage extends Thread {
      * @param name - the file name
      * @param data - the list
      */
-    @SuppressWarnings("unchecked")
-    protected synchronized <T extends Serializable> void store(String name, LinkedList<T> data) {
+    protected synchronized void store(String name, Serializable data) {
         try {
             boolean isFirstTask = !hasTask();
             this.tasks.merge(name, 1, Integer::sum);
-            this.map.put(name, (LinkedList<Serializable>) data);
+            this.map.put(name, data);
             if(isFirstTask) {
                 Log.print("Storage", "Tasks were requested.");
                 this.inspect();
@@ -95,6 +98,7 @@ public class Storage extends Thread {
     public void run() {
         this.running = true;
         Log.print("Storage", "Started.");
+        String currentTaskName = "";
         while(this.running || this.hasTask()) {
             try {
                 // Wait for tasks
@@ -116,7 +120,8 @@ public class Storage extends Thread {
                     };
                     
                     // Get task data
-                    LinkedList<Serializable> storable = this.map.get(name);
+                    currentTaskName = name;
+                    Serializable storable = this.map.get(name);
                     ObjectOutputStream object = this.streams.get(name);
 
                     if(object == null) {
@@ -129,10 +134,28 @@ public class Storage extends Thread {
                     object.flush();
                     this.map.remove(name);
                     this.tasks.put(name, 0);
-                    Log.print("Storage", "Task finished, " + storable.size() + " " + name + " were stored.");
+                    if (storable instanceof List<?>) {
+                        List<?> list = (List<?>) storable;
+                        Log.print("Storage", "Task finished, " + list.size() + " " + name + " were stored in a list.");
+                    } else if (storable instanceof Map<?, ?>) {
+                        Map<?, ?> map = (Map<?, ?>) storable;
+                        Log.print("Storage", "Task finished, " + map.size() + " " + name + " were stored on a map.");
+                    } else if (storable instanceof Set<?>) {
+                        Set<?> set = (Set<?>) storable;
+                        Log.print("Storage", "Task finished, " + set.size() + " " + name + " were stored in a set.");
+                    } else if (storable instanceof Queue<?>) {
+                        Queue<?> queue = (Queue<?>) storable;
+                        Log.print("Storage", "Task finished, " + queue.size() + " " + name + " were stored in a queue.");
+                    } else if (name.endsWith("s")) {
+                        Log.print("Storage", "Task finished, " + name + " were stored.");
+                    } else {
+                        Log.print("Storage", "Task finished, " + name + " was stored.");
+                    };
                 };
             } catch (Exception e) {
-                Log.print("Storage", "Tasks failed.");
+                this.tasks.put(currentTaskName, 0);
+                Log.print("Storage", "Tasks from " + currentTaskName + " failed.");
+                Log.print("Error", e.getMessage());
             };
         };
 
@@ -143,6 +166,7 @@ public class Storage extends Thread {
                 object.close();
             } catch (Exception e) {
                 Log.print("Storage", "Can't close stream of " + name + ".");
+                Log.print("Error", e.getMessage());
             };
         };
 
@@ -164,6 +188,7 @@ public class Storage extends Thread {
             };
         } catch (InterruptedException e) {
             Log.print("Storage", "Can't finish safely.");
+            Log.print("Error", e.getMessage());
         };
     };
 
@@ -177,6 +202,7 @@ public class Storage extends Thread {
             super.start();
         } catch (IllegalThreadStateException e) {
             Log.print("Storage", "Can't start.");
+            Log.print("Error", e.getMessage());
         };
     };
     //#endregion

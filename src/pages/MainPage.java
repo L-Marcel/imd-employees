@@ -11,8 +11,8 @@ public class MainPage implements Page {
         Log.print("Navigating to main page.");
         
         String[] options = {
+            "Cadastrar professor",
             "Informações",
-            "Testar formatador"
         };
         
         int option = -1;
@@ -25,15 +25,10 @@ public class MainPage implements Page {
                 router.back();
                 break;
             case 0:
-                router.navigate(new InfomationPage());
+                router.navigate(new AddTeacherPage());
                 break;
             case 1:
-                menu.cleanup();
-                menu.header("Testando");
-                menu.getFloat("Valor: ", (_) -> {}, (f) -> {
-                    return String.format("R$ %.2f", f);
-                });
-                menu.pushPageBack();
+                router.navigate(new InfomationPage());
                 break;
             default:
                 router.replace(this);
