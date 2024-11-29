@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 import src.persons.common.Address;
 import src.persons.common.Employee;

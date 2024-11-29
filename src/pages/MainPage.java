@@ -17,7 +17,7 @@ public class MainPage implements Page {
         
         int option = -1;
         menu.header("Menu Principal");
-        option = menu.getPageOption(options, true);
+        option = menu.getPageOption(options);
         menu.divider();
 
         switch(option) {

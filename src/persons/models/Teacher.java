@@ -5,7 +5,6 @@ import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 import src.persons.Disciplines;
 import src.persons.common.Address;

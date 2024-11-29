@@ -2,11 +2,18 @@ package src.pages;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 import pretty.Router;
 import pretty.interfaces.Page;
 import pretty.layout.Menu;
+import pretty.layout.Text;
+import pretty.utils.Array;
 import src.log.Log;
+import src.persons.Disciplines;
 import src.persons.Persons;
 import src.persons.common.Address;
 import src.persons.enums.Genrer;
@@ -30,7 +37,7 @@ public class AddTeacherPage implements Page {
     @Override
     public void render(Menu menu, Router router) {
         Log.print("Navigating to add teacher page.");
-        
+
         menu.header("Cadastrando Professor");
         String name = menu.getString(
             "Nome: ", 
@@ -128,30 +135,123 @@ public class AddTeacherPage implements Page {
                 Graduations.getOptions()
             )
         );
-        menu.divider();
-        
-        Teacher teacher = new Teacher(
-            name,
-            cpf,
-            birthdate,
-            genrer,
-            address,
-            registration,
-            wage,
-            departament,
-            workload,
-            joinedAt,
-            level,
-            graduation,
-            new ArrayList<>()
-        );
 
+        menu.header("Disciplinas");
+        ArrayList<String> teacherDisciplines = new ArrayList<String>();
+
+        String[] disciplinesOptions = {
+            "Adiciona disciplina",
+            "Remover disciplina"
+        };
+
+        boolean addingDisciplines = true;
+        while(addingDisciplines) {
+            for (String discipline : teacherDisciplines) {
+                menu.push(Text.success("+ ") + discipline);
+            };
+            
+            int option = 0;
+            if (teacherDisciplines.size() > 0) {
+                menu.divider();
+                option = menu.getPageOption(disciplinesOptions, "Finalizar");
+                menu.rollback(7);
+            };
+
+            String[] teacherDisciplinesArray = teacherDisciplines.toArray(String[]::new);
+            Disciplines disciplines = Disciplines.getInstance();
+
+            switch (option) {
+                case -1: {
+                    addingDisciplines = false;
+                    disciplines.decrement(teacherDisciplinesArray);
+                    break;
+                } case 0: {
+                    LinkedHashMap<String, Integer> disciplinesMap = disciplines.get();
+                    String[] mappedDisicplines = disciplinesMap
+                        .sequencedKeySet()
+                        .toArray(String[]::new);
+
+                    ArrayList<String> availableDisciplines = new ArrayList<String>(
+                        mappedDisicplines.length
+                    );
+
+                    for (String mappedDiscipline : mappedDisicplines) {
+                        availableDisciplines.add(mappedDiscipline);
+                    };
+
+                    availableDisciplines.add("[Cadastrar nova disciplina]");
+                    if (teacherDisciplines.size() > 0) menu.divider();
+
+                    String[] avaiableDisciplinesArray = availableDisciplines
+                        .stream()
+                        .filter((t) -> !Array.exists(
+                            teacherDisciplinesArray, 
+                            t
+                        ))
+                        .toArray(String[]::new);
+
+                    int selected = menu.getOption(
+                        "Associar ao professor: ", 
+                        avaiableDisciplinesArray
+                    );
+                    if (teacherDisciplines.size() > 0) menu.rollback(2);
+                    else menu.rollback();
+
+                    String discipline;
+                    if (avaiableDisciplinesArray.length - 1 <= selected) {
+                        discipline = menu.getString(
+                            "Nova disciplina: ", 
+                            (t) -> disciplines.validate(t)
+                        );
+                        menu.rollback();
+                    } else {
+                        discipline = avaiableDisciplinesArray[selected];
+                    };
+
+                    teacherDisciplines.add(discipline);
+                    disciplines.increment(discipline);
+                    menu.rollback(teacherDisciplines.size() - 1);
+                    break;
+                } case 1: {
+                    menu.rollback(teacherDisciplines.size());
+                    int selected = menu.getOption(
+                        "Desassociar do professor: ", 
+                        teacherDisciplinesArray
+                    );
+                    menu.rollback();
+                    disciplines.decrement(teacherDisciplines.get(selected));
+                    teacherDisciplines.remove(selected);
+                    break;
+                } default: {
+                    menu.rollback(teacherDisciplines.size());
+                    break;
+                }
+            };
+        };
+        
+        menu.divider();
         boolean confirmation = menu.getPageConfirmation();
         if (confirmation) {
+            Teacher teacher = new Teacher(
+                name,
+                cpf,
+                birthdate,
+                genrer,
+                address,
+                registration,
+                wage,
+                departament,
+                workload,
+                joinedAt,
+                level,
+                graduation,
+                teacherDisciplines
+            );
+
             Persons persons = Persons.getInstance();
             persons.add(teacher);
-        } else {
-            router.back();
         };
+
+        router.back();
     };
 };
