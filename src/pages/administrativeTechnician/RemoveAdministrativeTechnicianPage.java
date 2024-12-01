@@ -1,13 +1,10 @@
-package src.pages;
-
-import java.util.LinkedList;
+package src.pages.administrativeTechnician;
 
 import pretty.Router;
 import pretty.interfaces.Page;
 import pretty.layout.Menu;
 import src.log.Log;
 import src.persons.Employees;
-import src.persons.Persons;
 import src.persons.models.AdministrativeTechnician;
 import src.utils.Registrations;
 
@@ -24,22 +21,27 @@ public class RemoveAdministrativeTechnicianPage implements Page {
 
         menu.divider();
 
-        AdministrativeTechnician teacher = Employees.getAdministrativeTechnicianByRegistration(
+        AdministrativeTechnician administrativeTechnician = Employees.getAdministrativeTechnicianByRegistration(
             registration
         );
 
-        if (teacher == null) {
+        if (administrativeTechnician == null) {
             menu.push("Nenhum técnico encontrado!");
             menu.divider();
             menu.pushPageBack();
             router.back();
         } else {
-            menu.push("Deseja mesmo remover " + teacher.getName() + "?");
+            menu.push(
+                "Deseja mesmo remover " + administrativeTechnician.getName() + "?"
+            );
             boolean confirmation = menu.getPageConfirmation("Cancelar");
             if (confirmation) {
-                Persons persons = Persons.getInstance();
-                persons.remove(teacher);
-                menu.push("Técnico " + teacher.getName() + " removido!");
+                Employees.removeAdministrativeTechnician(
+                    administrativeTechnician
+                );
+                menu.push(
+                    "Técnico " + administrativeTechnician.getName() + " removido!"
+                );
             };
             router.back();
         };

@@ -1,6 +1,4 @@
-package src.pages;
-
-import java.util.LinkedList;
+package src.pages.administrativeTechnician;
 
 import pretty.Router;
 import pretty.interfaces.Page;
@@ -23,18 +21,17 @@ public class SearchAdministrativeTechnicianPage implements Page {
 
         menu.divider();
 
-        AdministrativeTechnician teacher = Employees.getAdministrativeTechnicianByRegistration(
+        AdministrativeTechnician administrativeTechnician = Employees.getAdministrativeTechnicianByRegistration(
             registration
         );
 
-        if (teacher == null) {
+        if (administrativeTechnician == null) {
             menu.push("Nenhum técnico encontrado!");
             menu.divider();
             menu.pushPageBack();
             router.back();
         } else {
-            // [TODO] Finish it
-            router.back();
+            router.replace(new AdministrativeTechnicianPage(administrativeTechnician));
         };
     };
 };

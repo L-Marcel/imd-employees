@@ -1,5 +1,6 @@
 package src.utils;
 
+import src.persons.enums.Graduation;
 import src.persons.enums.Level;
 
 public class Levels {
@@ -20,5 +21,10 @@ public class Levels {
 
     public static Level convert(Integer option) {
         return Level.fromValue(option);
+    };
+
+    public static String toString(Level level) {
+        int index = level.getValue() % 8;
+        return Levels.options[index];
     };
 };

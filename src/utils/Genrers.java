@@ -16,4 +16,9 @@ public class Genrers {
     public static Genrer convert(Integer option) {
         return Genrer.fromValue(option);
     };
+
+    public static String toString(Genrer genrer) {
+        int index = genrer.getValue() % 3;
+        return Genrers.options[index];
+    };
 };

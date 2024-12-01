@@ -4,6 +4,14 @@ import pretty.Router;
 import pretty.interfaces.Page;
 import pretty.layout.Menu;
 import src.log.Log;
+import src.pages.administrativeTechnician.AddAdministrativeTechnicianPage;
+import src.pages.administrativeTechnician.AdministrativeTechniciansPage;
+import src.pages.administrativeTechnician.RemoveAdministrativeTechnicianPage;
+import src.pages.administrativeTechnician.SearchAdministrativeTechnicianPage;
+import src.pages.teacher.AddTeacherPage;
+import src.pages.teacher.FilterTeachersPage;
+import src.pages.teacher.RemoveTeacherPage;
+import src.pages.teacher.SearchTeacherPage;
 
 public class MainPage implements Page {
     @Override
@@ -38,7 +46,7 @@ public class MainPage implements Page {
                 router.navigate(new AddAdministrativeTechnicianPage());
                 break;
             case 2:
-                router.navigate(new TeachersPage());
+                router.navigate(new FilterTeachersPage());
                 break;
             case 3:
                 router.navigate(new AdministrativeTechniciansPage());

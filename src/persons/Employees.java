@@ -9,6 +9,16 @@ import src.persons.models.Teacher;
 
 public class Employees {
     //#region Teachers
+    public static void addTeacher(Teacher teacher) {
+        Persons persons = Persons.getInstance();
+        persons.add(teacher);
+    };
+
+    public static void removeTeacher(Teacher teacher) {
+        Persons persons = Persons.getInstance();
+        persons.remove(teacher);
+    };
+
     public static LinkedList<Teacher> getTeachers() {
         Persons persons = Persons.getInstance();
         return persons.get().stream()
@@ -41,6 +51,20 @@ public class Employees {
     //#endregion
 
     //#region Administrative Technicians
+    public static void addAdministrativeTechnician(
+        AdministrativeTechnician administrativeTechnician
+    ) {
+        Persons persons = Persons.getInstance();
+        persons.add(administrativeTechnician);
+    };
+
+    public static void removeAdministrativeTechnician(
+        AdministrativeTechnician administrativeTechnician
+    ) {
+        Persons persons = Persons.getInstance();
+        persons.remove(administrativeTechnician);
+    };
+
     public static LinkedList<AdministrativeTechnician> getAdministrativeTechnicians() {
         Persons persons = Persons.getInstance();
         return persons.get().stream()

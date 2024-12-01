@@ -1,4 +1,4 @@
-package src.pages;
+package src.pages.administrativeTechnician;
 
 import java.util.LinkedList;
 
@@ -28,9 +28,13 @@ public class AdministrativeTechniciansPage implements Page {
             menu.pushPageBack();
             router.back();
         } else {
-            // [TODO] Finish it
             int selected = menu.getPageOption(options, 0, 5, 0, "Voltar");
-            router.back();
+            if (selected < 0) {
+                router.back();
+            } else {
+                AdministrativeTechnician administrativeTechnician = administrativeTechnicians.get(selected);
+                router.navigate(new AdministrativeTechnicianPage(administrativeTechnician));
+            };
         };
     };
 };

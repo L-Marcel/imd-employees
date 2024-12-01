@@ -1,6 +1,4 @@
-package src.pages;
-
-import java.util.LinkedList;
+package src.pages.teacher;
 
 import pretty.Router;
 import pretty.interfaces.Page;
@@ -31,8 +29,7 @@ public class SearchTeacherPage implements Page {
             menu.pushPageBack();
             router.back();
         } else {
-            // [TODO] Finish it
-            router.back();
+            router.replace(new TeacherPage(teacher));
         };
     };
 };

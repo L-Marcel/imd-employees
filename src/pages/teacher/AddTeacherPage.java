@@ -1,11 +1,7 @@
-package src.pages;
+package src.pages.teacher;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
 
 import pretty.Router;
 import pretty.interfaces.Page;
@@ -14,7 +10,7 @@ import pretty.layout.Text;
 import pretty.utils.Array;
 import src.log.Log;
 import src.persons.Disciplines;
-import src.persons.Persons;
+import src.persons.Employees;
 import src.persons.common.Address;
 import src.persons.enums.Genrer;
 import src.persons.enums.Graduation;
@@ -245,8 +241,7 @@ public class AddTeacherPage implements Page {
                 teacherDisciplines
             );
 
-            Persons persons = Persons.getInstance();
-            persons.add(teacher);
+            Employees.addTeacher(teacher);
         };
 
         router.back();

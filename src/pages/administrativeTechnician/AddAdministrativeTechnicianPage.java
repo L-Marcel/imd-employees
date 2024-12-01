@@ -1,20 +1,12 @@
-package src.pages;
+package src.pages.administrativeTechnician;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
 
 import pretty.Router;
 import pretty.interfaces.Page;
 import pretty.layout.Menu;
-import pretty.layout.Text;
-import pretty.utils.Array;
 import src.log.Log;
-import src.persons.Disciplines;
-import src.persons.Persons;
+import src.persons.Employees;
 import src.persons.common.Address;
 import src.persons.enums.Genrer;
 import src.persons.enums.Graduation;
@@ -162,8 +154,7 @@ public class AddAdministrativeTechnicianPage implements Page {
                 gratification
             );
 
-            Persons persons = Persons.getInstance();
-            persons.add(administrativeTechnician);
+            Employees.addAdministrativeTechnician(administrativeTechnician);
         };
 
         router.back();
