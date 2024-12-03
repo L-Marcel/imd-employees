@@ -47,10 +47,13 @@ public class TeacherPage implements Page {
         menu.push("Departamento: " + Text.highlight(this.teacher.getDepartment()));
         menu.push("Carga horária: " + Text.highlight(Workloads.format(this.teacher.getWorkload())));
         menu.push("Data de ingresso: " + Text.highlight(Dates.format(this.teacher.getJoinedAt())));
-        menu.push("Salário (sem os bonus): " + Text.highlight(Wages.format(this.teacher.getWage())));
-        menu.push("Salário (com os bonus): " + Text.highlight(Wages.format(this.teacher.getWageWithBonus())));
+        
+        menu.header("Salário");
+        menu.push("Base: " + Text.highlight(Wages.format(this.teacher.getWage() + this.teacher.getGraduationBonus())));
+        menu.push(" Graduação: " + Text.highlight("+ " + Wages.format(this.teacher.getGraduationBonus())));
+        menu.push("Total: " + Text.highlight(Wages.format(this.teacher.getWageWithBonus())));
         menu.push("  Nível: " + Text.highlight("+ " + Wages.format(this.teacher.getLevelBonus())));
-        menu.push("  Graduação: " + Text.highlight("+ " + Wages.format(this.teacher.getGraduationBonus())));
+        
 
         menu.divider();
         menu.pushPageBack();

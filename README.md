@@ -30,9 +30,13 @@ As classes [`src/persons/Disciplines.java`](/src/persons/Disciplines.java), [`sr
 
 Falarei delas mais a frente.
 
-## Modelos e objetos comuns
+## Entidades
 
-Na pasta [`src/persons/common`] guardei a classe [`Address.java`](src/persons/common/Address.java)
+Na pasta [`src/persons/models`](src/persons/models/) guardei as classes que representam as entidades fortes da aplicação, isto é [`Teacher.java`](src/persons/models/Teacher.java) e [`AdministrativeTechinician`](src/persons/models/AdministrativeTechnician.java).
+
+Na pasta [`src/persons/common`] guardei a classe [`Address.java`](src/persons/common/Address.java), já que ela é uma entidade fraca e é armazenada com um atributo de [`Person.java`](src/persons/Persons.java), que é a classe abstrata pai de [`Teacher.java`](src/persons/models/Teacher.java) e [`AdministrativeTechinician`](src/persons/models/AdministrativeTechnician.java) e também é a classe referência para o armazenamento abstraído por [`StorableList.java`](src/storage/StorableList.java) utilizado em [`Persons.java`](src/persons/Persons.java).
+
+E, sendo uma exigência da atividade, deixei nessa pasta também a interface [`Employee.java`](/src/persons/common/Employee.java). Que contém alguns métodos que são implementados em [`Teacher.java`](src/persons/models/Teacher.java) e [`AdministrativeTechinician`](src/persons/models/AdministrativeTechnician.java).
 
 # Justificativas
 

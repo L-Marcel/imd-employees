@@ -2,7 +2,6 @@ package src.storage;
 
 import java.io.Serializable;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
 
 import src.log.Log;
 

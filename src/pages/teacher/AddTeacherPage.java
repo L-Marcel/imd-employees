@@ -21,7 +21,6 @@ import src.utils.Graduations;
 import src.utils.Levels;
 import src.utils.Names;
 import src.utils.Registrations;
-import src.utils.Wages;
 import src.utils.Workloads;
 import src.utils.Addresses;
 import src.utils.Ceps;
@@ -96,11 +95,11 @@ public class AddTeacherPage implements Page {
         );
 
         menu.header("Trabalho");
-        Double wage = menu.getDouble(
-            "Salário (sem os bonus): ", 
-            (t) -> Wages.validate(t, 4000d),
-            (t) -> Wages.format(t)
-        );
+        // Double wage = menu.getDouble(
+        //     "Salário (sem os bonus): ", 
+        //     (t) -> Wages.validate(t, 4000d),
+        //     (t) -> Wages.format(t)
+        // );
         String departament = menu.getString(
             "Departamento: ", 
             (t) -> Departaments.validate(t)
@@ -232,7 +231,7 @@ public class AddTeacherPage implements Page {
                 genrer,
                 address,
                 registration,
-                wage,
+                4000d,
                 departament,
                 workload,
                 joinedAt,

@@ -86,7 +86,8 @@ public class Teacher extends Person implements Employee {
      */
     @Override
     public Double getLevelBonus() {
-        return (Math.pow(1.05d, this.level.getValue()) - 1) * this.getWage();
+        return (Math.pow(1.05d, this.level.getValue()) - 1) * 
+            (this.getGraduationBonus() + this.getWage());
     };
 
     /**
@@ -102,12 +103,11 @@ public class Teacher extends Person implements Employee {
      * Calculate final wage.
      * @return wage with bonus
      */
-    // [QUESTION] Is really a sum here?
     @Override
     public Double getWageWithBonus() {
         return this.getWage() + 
-            this.getLevelBonus() + 
-            this.getGraduationBonus();
+            this.getGraduationBonus() +
+            this.getLevelBonus();
     };
 
     public Level getLevel() {

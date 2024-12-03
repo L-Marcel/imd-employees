@@ -84,7 +84,7 @@ public class AdministrativeTechnician extends Person implements Employee {
      * @return wage bonus
      */
     public Double getUnhealthinessBonus() {
-        if (this.unhealthiness) return 0.5d * this.getWage();
+        if (this.unhealthiness) return 0.5d * (this.getWage() + this.getGraduationBonus());
         return 0d;
     };
 
@@ -93,7 +93,7 @@ public class AdministrativeTechnician extends Person implements Employee {
      * @return wage bonus
      */
     public Double getGratificationBonus() {
-        if (this.gratification) return 0.5d * this.getWage();
+        if (this.gratification) return 0.5d * (this.getWage() + this.getGraduationBonus());
         return 0d;
     };
 
@@ -103,7 +103,8 @@ public class AdministrativeTechnician extends Person implements Employee {
      */
     @Override
     public Double getLevelBonus() {
-        return (Math.pow(1.03d, this.level.getValue()) - 1) * this.getWage();
+        return (Math.pow(1.03d, this.level.getValue()) - 1) * 
+            (this.getGraduationBonus() + this.getWage());
     };
 
     /**
@@ -119,13 +120,12 @@ public class AdministrativeTechnician extends Person implements Employee {
      * Calculate final wage.
      * @return wage with bonus
      */
-    // [QUESTION] Is really a sum here?
     @Override
     public Double getWageWithBonus() {
         return this.getWage() + 
+            this.getGraduationBonus() + 
             this.getLevelBonus() + 
-            this.getGraduationBonus() + 
-            this.getGraduationBonus() + 
+            this.getGratificationBonus() + 
             this.getUnhealthinessBonus();
     };
 

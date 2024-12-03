@@ -6,8 +6,6 @@ import pretty.Router;
 import pretty.interfaces.Page;
 import pretty.layout.Menu;
 import src.log.Log;
-import src.persons.Disciplines;
-import src.persons.Employees;
 import src.persons.models.Teacher;
 
 public class TeachersPage implements Page {

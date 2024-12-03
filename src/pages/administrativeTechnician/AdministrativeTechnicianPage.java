@@ -53,10 +53,11 @@ public class AdministrativeTechnicianPage implements Page {
         menu.push("Departamento: " + Text.highlight(this.administrativeTechnician.getDepartment()));
         menu.push("Carga horária: " + Text.highlight(Workloads.format(this.administrativeTechnician.getWorkload())));
         menu.push("Data de ingresso: " + Text.highlight(Dates.format(this.administrativeTechnician.getJoinedAt())));
-        menu.push("Salário (sem os bonus): " + Text.highlight(Wages.format(this.administrativeTechnician.getWage())));
-        menu.push("Salário (com os bonus): " + Text.highlight(Wages.format(this.administrativeTechnician.getWageWithBonus())));
-        menu.push("  Nível: " + Text.highlight("+ " + Wages.format(this.administrativeTechnician.getLevelBonus())));
+        menu.header("Salário");
+        menu.push("Base: " + Text.highlight(Wages.format(this.administrativeTechnician.getWage() + this.administrativeTechnician.getGraduationBonus())));
         menu.push("  Graduação: " + Text.highlight("+ " + Wages.format(this.administrativeTechnician.getGraduationBonus())));
+        menu.push("Total: " + Text.highlight(Wages.format(this.administrativeTechnician.getWageWithBonus())));
+        menu.push("  Nível: " + Text.highlight("+ " + Wages.format(this.administrativeTechnician.getLevelBonus())));
         menu.push("  Insalubridade: " + Text.highlight("+ " + Wages.format(this.administrativeTechnician.getUnhealthinessBonus())));
         menu.push("  Gratification: " + Text.highlight("+ " + Wages.format(this.administrativeTechnician.getGratificationBonus())));
         

@@ -60,7 +60,6 @@ public class Employees {
      * @param registration - the registration
      * @return the teacher
      */
-    // [QUESTION] Teachers and technicians can have same registration?
     public static Teacher getTeacherByRegistration(Long registration) {
         Persons persons = Persons.getInstance();
         for (Person person : persons.get()) {

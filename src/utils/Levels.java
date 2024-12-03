@@ -1,6 +1,5 @@
 package src.utils;
 
-import src.persons.enums.Graduation;
 import src.persons.enums.Level;
 
 public class Levels {
