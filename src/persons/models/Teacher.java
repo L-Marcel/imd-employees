@@ -55,6 +55,10 @@ public class Teacher extends Person implements Employee {
         map.increment(this.disciplines.toArray(String[]::new));
     };
 
+    /** 
+     * Method called to serialize the teacher, needed to serialize the address.
+     * @param out - object output
+     */
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
         super.writeExternal(out);
@@ -63,6 +67,10 @@ public class Teacher extends Person implements Employee {
         out.writeObject(this.disciplines);
     };
     
+    /**
+     * Method called to deserialize the teacher, needed to deserialize the address.
+     * @param in - object input
+     */
     @Override
     @SuppressWarnings("unchecked")
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
@@ -72,16 +80,28 @@ public class Teacher extends Person implements Employee {
         this.disciplines = (ArrayList<String>) in.readObject();
     };
 
+    /**
+     * Calculate wage level bonus.
+     * @return wage bonus
+     */
     @Override
     public Double getLevelBonus() {
         return (Math.pow(1.05d, this.level.getValue()) - 1) * this.getWage();
     };
 
+    /**
+     * Calculate wage graduation bonus.
+     * @return wage bonus
+     */
     @Override
     public Double getGraduationBonus() {
         return (0.25d + (0.25d * this.graduation.getValue())) * this.getWage();
     };
 
+    /**
+     * Calculate final wage.
+     * @return wage with bonus
+     */
     // [QUESTION] Is really a sum here?
     @Override
     public Double getWageWithBonus() {

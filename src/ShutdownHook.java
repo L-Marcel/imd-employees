@@ -1,7 +1,7 @@
 package src;
 
-import src.core.Storage;
 import src.log.Log;
+import src.storage.Storage;
 
 /**
  * Thread responsible for exit the application safely.

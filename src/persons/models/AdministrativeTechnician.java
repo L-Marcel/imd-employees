@@ -53,6 +53,10 @@ public class AdministrativeTechnician extends Person implements Employee {
         this.gratification = gratification;
     };
 
+    /** 
+     * Method called to serialize the administrative technician, needed to serialize the address.
+     * @param out - object output
+     */
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
         super.writeExternal(out);
@@ -62,6 +66,10 @@ public class AdministrativeTechnician extends Person implements Employee {
         out.writeBoolean(this.gratification);
     };
     
+    /** 
+     * Method called to deserialize the administrative technician, needed to deserialize the address.
+     * @param in - object input
+     */
     @Override
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
         super.readExternal(in);
@@ -71,26 +79,46 @@ public class AdministrativeTechnician extends Person implements Employee {
         this.gratification = in.readBoolean();
     };
 
+    /**
+     * Calculate wage unhealthiness bonus.
+     * @return wage bonus
+     */
     public Double getUnhealthinessBonus() {
         if (this.unhealthiness) return 0.5d * this.getWage();
         return 0d;
     };
 
+    /**
+     * Calculate wage gratification bonus.
+     * @return wage bonus
+     */
     public Double getGratificationBonus() {
         if (this.gratification) return 0.5d * this.getWage();
         return 0d;
     };
 
+    /**
+     * Calculate wage level bonus.
+     * @return wage bonus
+     */
     @Override
     public Double getLevelBonus() {
         return (Math.pow(1.03d, this.level.getValue()) - 1) * this.getWage();
     };
 
+    /**
+     * Calculate wage graduation bonus.
+     * @return wage bonus
+     */
     @Override
     public Double getGraduationBonus() {
         return (0.25d + (0.25d * this.graduation.getValue())) * this.getWage();
     };
 
+    /**
+     * Calculate final wage.
+     * @return wage with bonus
+     */
     // [QUESTION] Is really a sum here?
     @Override
     public Double getWageWithBonus() {

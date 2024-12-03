@@ -1,4 +1,4 @@
-package src.core;
+package src.storage;
 
 import java.io.Serializable;
 import java.util.LinkedHashMap;

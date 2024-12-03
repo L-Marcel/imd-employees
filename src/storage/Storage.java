@@ -1,4 +1,4 @@
-package src.core;
+package src.storage;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Semaphore;
