@@ -1,16 +1,31 @@
-[05/12/2024 - 16:23:05]:[Main] Navigating to main page.
-[05/12/2024 - 16:23:09]:[Main] Navigating to search teacher page.
-[05/12/2024 - 16:23:11]:[Storage] Starting...
-[05/12/2024 - 16:23:11]:[Storage] Started.
-[05/12/2024 - 16:23:11]:[Storable] Loadded 20 persons.
-[05/12/2024 - 16:23:11]:[Main] Navigation to teacher page.
-[05/12/2024 - 16:23:15]:[Main] Navigating to main page.
-[05/12/2024 - 16:23:28]:[Main] Navigating to search administrative technician page.
-[05/12/2024 - 16:23:31]:[Main] Navigating to main page.
-[05/12/2024 - 16:23:33]:[Main] Navigating to administrative technicians page.
-[05/12/2024 - 16:23:35]:[Main] Navigating to main page.
-[05/12/2024 - 16:23:38]:[Main] Navigating to search administrative technician page.
-[05/12/2024 - 16:23:40]:[Main] Navigation to administrative technician page.
-[05/12/2024 - 16:24:21]:[Main] Navigating to main page.
-[05/12/2024 - 16:26:51]:[Storage] Finishing...
-[05/12/2024 - 16:26:51]:[Storage] Finished.
+[05/12/2024 - 16:29:46]:[Main] Navigating to main page.
+[05/12/2024 - 16:29:49]:[Main] Navigating to remove teacher page.
+[05/12/2024 - 16:29:50]:[Storage] Starting...
+[05/12/2024 - 16:29:50]:[Storage] Started.
+[05/12/2024 - 16:29:51]:[Storable] Loadded 21 persons.
+[05/12/2024 - 16:29:52]:[Storable] Loadded 11 disciplines.
+[05/12/2024 - 16:29:52]:[Storage] Tasks were requested.
+[05/12/2024 - 16:29:52]:[Main] Navigating to main page.
+[05/12/2024 - 16:29:53]:[Storage] Task finished, 11 disciplines were stored on a map.
+[05/12/2024 - 16:29:55]:[Storage] Task finished, 20 persons were stored in a list.
+[05/12/2024 - 16:30:04]:[Main] Navigating to filter teachers page.
+[05/12/2024 - 16:30:04]:[Main] Navigating to teachers page.
+[05/12/2024 - 16:30:04]:[Main] Navigation to teacher page.
+[05/12/2024 - 16:30:06]:[Main] Navigating to teachers page.
+[05/12/2024 - 16:30:08]:[Main] Navigation to teacher page.
+[05/12/2024 - 16:30:09]:[Main] Navigating to teachers page.
+[05/12/2024 - 16:30:10]:[Main] Navigating to main page.
+[05/12/2024 - 16:30:12]:[Main] Navigating to administrative technicians page.
+[05/12/2024 - 16:30:13]:[Main] Navigation to administrative technician page.
+[05/12/2024 - 16:30:15]:[Main] Navigating to administrative technicians page.
+[05/12/2024 - 16:30:16]:[Main] Navigating to main page.
+[05/12/2024 - 16:30:20]:[Main] Navigating to add administrative technician page.
+[05/12/2024 - 16:30:59]:[Storage] Tasks were requested.
+[05/12/2024 - 16:30:59]:[Main] Navigating to main page.
+[05/12/2024 - 16:31:00]:[Storage] Task finished, 21 persons were stored in a list.
+[05/12/2024 - 16:31:01]:[Main] Navigating to remove administrative technician page.
+[05/12/2024 - 16:31:05]:[Storage] Tasks were requested.
+[05/12/2024 - 16:31:05]:[Main] Navigating to main page.
+[05/12/2024 - 16:31:06]:[Storage] Task finished, 20 persons were stored in a list.
+[05/12/2024 - 16:31:08]:[Storage] Finishing...
+[05/12/2024 - 16:31:08]:[Storage] Finished.
