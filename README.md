@@ -29,6 +29,8 @@ Com as extensões instaladas, basta acessar pelo `VSCode` o arquivo `Main.java`,
 
 Houve também uma ocasião em um computador do `IMD` que precisei também adicionar a `flag` de execução `--enable-preview` a extensão que executa o código. Ele representa 1 dos 3 computadores em que testei o código.
 
+Recomendo manter o terminal bem aberto...
+
 # 2. Documentação
 
 Boa parte dos métodos e classes estão parcialmente ou completamente comentados, no geral usando a `syntax` do `javadoc` e divisões por `#region`, um recurso bastate útil do `VSCode`. Ainda assim, para facilitar o entendimento, e também sendo parte de uma das exigências da atividade, deixo abaixo seções documentando de forma sintetizada o funcionamento de cada classe da aplicação.
