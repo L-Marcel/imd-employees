@@ -48,6 +48,11 @@ public class TeacherPage implements Page {
         menu.push("Carga horária: " + Text.highlight(Workloads.format(this.teacher.getWorkload())));
         menu.push("Data de ingresso: " + Text.highlight(Dates.format(this.teacher.getJoinedAt())));
         
+        menu.header("Disciplinas");
+        for (String discipline : teacher.getDisciplines()) {
+            menu.push(discipline);
+        };
+
         menu.header("Salário");
         menu.push("Base: " + Text.highlight(Wages.format(this.teacher.getWage() + this.teacher.getGraduationBonus())));
         menu.push(" Graduação: " + Text.highlight("+ " + Wages.format(this.teacher.getGraduationBonus())));

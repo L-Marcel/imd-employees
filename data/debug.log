@@ -1,21 +1,14 @@
-[05/12/2024 - 16:17:45]:[Main] Navigating to main page.
-[05/12/2024 - 16:17:49]:[Main] Navigating to administrative technicians page.
-[05/12/2024 - 16:17:49]:[Storage] Starting...
-[05/12/2024 - 16:17:49]:[Storage] Started.
-[05/12/2024 - 16:17:49]:[Storable] Loadded 19 persons.
-[05/12/2024 - 16:17:58]:[Main] Navigating to main page.
-[05/12/2024 - 16:17:59]:[Main] Navigating to add administrative technician page.
-[05/12/2024 - 16:18:57]:[Storage] Tasks were requested.
-[05/12/2024 - 16:18:57]:[Main] Navigating to main page.
-[05/12/2024 - 16:18:58]:[Storage] Task finished, 20 persons were stored in a list.
-[05/12/2024 - 16:18:59]:[Main] Navigating to administrative technicians page.
-[05/12/2024 - 16:19:17]:[Main] Navigating to main page.
-[05/12/2024 - 16:19:23]:[Main] Navigating to filter teachers page.
-[05/12/2024 - 16:19:23]:[Storable] Loadded 11 disciplines.
-[05/12/2024 - 16:19:28]:[Main] Navigating to teachers page.
-[05/12/2024 - 16:19:35]:[Main] Navigation to teacher page.
-[05/12/2024 - 16:19:51]:[Main] Navigating to teachers page.
-[05/12/2024 - 16:19:53]:[Main] Navigating to main page.
-[05/12/2024 - 16:19:59]:[Main] Navigating to search teacher page.
-[05/12/2024 - 16:20:05]:[Storage] Finishing...
-[05/12/2024 - 16:20:05]:[Storage] Finished.
+[05/12/2024 - 16:23:05]:[Main] Navigating to main page.
+[05/12/2024 - 16:23:09]:[Main] Navigating to search teacher page.
+[05/12/2024 - 16:23:11]:[Storage] Starting...
+[05/12/2024 - 16:23:11]:[Storage] Started.
+[05/12/2024 - 16:23:11]:[Storable] Loadded 20 persons.
+[05/12/2024 - 16:23:11]:[Main] Navigation to teacher page.
+[05/12/2024 - 16:23:15]:[Main] Navigating to main page.
+[05/12/2024 - 16:23:28]:[Main] Navigating to search administrative technician page.
+[05/12/2024 - 16:23:31]:[Main] Navigating to main page.
+[05/12/2024 - 16:23:33]:[Main] Navigating to administrative technicians page.
+[05/12/2024 - 16:23:35]:[Main] Navigating to main page.
+[05/12/2024 - 16:23:38]:[Main] Navigating to search administrative technician page.
+[05/12/2024 - 16:23:40]:[Main] Navigation to administrative technician page.
+[05/12/2024 - 16:24:21]:[Main] Navigating to main page.
