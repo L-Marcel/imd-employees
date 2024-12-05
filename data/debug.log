@@ -1,71 +1,21 @@
-[05/12/2024 - 15:49:40]:[Main] Navigating to main page.
-[05/12/2024 - 15:49:42]:[Main] Navigating to add teacher page.
-[05/12/2024 - 15:49:50]:[Storage] Starting...
-[05/12/2024 - 15:49:50]:[Storable] Creating persons database.
-[05/12/2024 - 15:49:50]:[Storage] Started.
-[05/12/2024 - 15:50:46]:[Storable] Creating disciplines database.
-[05/12/2024 - 15:51:21]:[Storage] Tasks were requested.
-[05/12/2024 - 15:51:23]:[Storage] Tasks were requested.
-[05/12/2024 - 15:51:23]:[Main] Navigating to main page.
-[05/12/2024 - 15:51:23]:[Storage] Task finished, 3 disciplines were stored on a map.
-[05/12/2024 - 15:51:24]:[Storage] Task finished, 1 persons were stored in a list.
-[05/12/2024 - 15:51:24]:[Main] Navigating to add teacher page.
-[05/12/2024 - 15:52:42]:[Storage] Tasks were requested.
-[05/12/2024 - 15:52:43]:[Main] Navigating to main page.
-[05/12/2024 - 15:52:44]:[Storage] Task finished, 2 persons were stored in a list.
-[05/12/2024 - 15:52:44]:[Main] Navigating to add teacher page.
-[05/12/2024 - 15:52:45]:[Storage] Task finished, 4 disciplines were stored on a map.
-[05/12/2024 - 15:54:18]:[Storage] Tasks were requested.
-[05/12/2024 - 15:54:19]:[Main] Navigating to main page.
-[05/12/2024 - 15:54:20]:[Main] Navigating to add teacher page.
-[05/12/2024 - 15:54:20]:[Storage] Task finished, 3 persons were stored in a list.
-[05/12/2024 - 15:54:21]:[Storage] Task finished, 5 disciplines were stored on a map.
-[05/12/2024 - 15:55:35]:[Storage] Tasks were requested.
-[05/12/2024 - 15:55:35]:[Main] Navigating to main page.
-[05/12/2024 - 15:55:37]:[Storage] Task finished, 4 persons were stored in a list.
-[05/12/2024 - 15:55:37]:[Main] Navigating to filter teachers page.
-[05/12/2024 - 15:55:38]:[Storage] Task finished, 7 disciplines were stored on a map.
-[05/12/2024 - 15:55:38]:[Main] Navigating to teachers page.
-[05/12/2024 - 15:55:42]:[Main] Navigating to main page.
-[05/12/2024 - 15:55:42]:[Main] Navigating to add teacher page.
-[05/12/2024 - 15:57:06]:[Storage] Tasks were requested.
-[05/12/2024 - 15:57:07]:[Storage] Task finished, 7 disciplines were stored on a map.
-[05/12/2024 - 15:57:08]:[Storage] Tasks were requested.
-[05/12/2024 - 15:57:08]:[Main] Navigating to main page.
-[05/12/2024 - 15:57:09]:[Storage] Task finished, 7 disciplines were stored on a map.
-[05/12/2024 - 15:57:10]:[Storage] Task finished, 5 persons were stored in a list.
-[05/12/2024 - 15:57:10]:[Main] Navigating to add teacher page.
-[05/12/2024 - 15:58:21]:[Storage] Tasks were requested.
-[05/12/2024 - 15:58:21]:[Main] Navigating to main page.
-[05/12/2024 - 15:58:23]:[Main] Navigating to add teacher page.
-[05/12/2024 - 15:58:23]:[Storage] Task finished, 6 persons were stored in a list.
-[05/12/2024 - 15:58:24]:[Storage] Task finished, 8 disciplines were stored on a map.
-[05/12/2024 - 16:00:17]:[Storage] Tasks were requested.
-[05/12/2024 - 16:00:18]:[Main] Navigating to main page.
-[05/12/2024 - 16:00:19]:[Storage] Task finished, 7 persons were stored in a list.
-[05/12/2024 - 16:00:20]:[Storage] Task finished, 10 disciplines were stored on a map.
-[05/12/2024 - 16:00:20]:[Main] Navigating to filter teachers page.
-[05/12/2024 - 16:00:21]:[Main] Navigating to teachers page.
-[05/12/2024 - 16:00:39]:[Main] Navigating to main page.
-[05/12/2024 - 16:00:40]:[Main] Navigating to add teacher page.
-[05/12/2024 - 16:01:56]:[Storage] Tasks were requested.
-[05/12/2024 - 16:01:57]:[Main] Navigating to main page.
-[05/12/2024 - 16:01:58]:[Storage] Task finished, 8 persons were stored in a list.
-[05/12/2024 - 16:01:59]:[Storage] Task finished, 11 disciplines were stored on a map.
-[05/12/2024 - 16:01:59]:[Main] Navigating to add teacher page.
-[05/12/2024 - 16:02:59]:[Storage] Tasks were requested.
-[05/12/2024 - 16:03:00]:[Storage] Task finished, 11 disciplines were stored on a map.
-[05/12/2024 - 16:03:02]:[Storage] Tasks were requested.
-[05/12/2024 - 16:03:02]:[Main] Navigating to main page.
-[05/12/2024 - 16:03:03]:[Storage] Task finished, 9 persons were stored in a list.
-[05/12/2024 - 16:03:04]:[Main] Navigating to add teacher page.
-[05/12/2024 - 16:03:04]:[Storage] Task finished, 11 disciplines were stored on a map.
-[05/12/2024 - 16:04:29]:[Storage] Tasks were requested.
-[05/12/2024 - 16:04:30]:[Storage] Task finished, 11 disciplines were stored on a map.
-[05/12/2024 - 16:04:30]:[Storage] Tasks were requested.
-[05/12/2024 - 16:04:30]:[Main] Navigating to main page.
-[05/12/2024 - 16:04:31]:[Storage] Task finished, 10 persons were stored in a list.
-[05/12/2024 - 16:04:32]:[Storage] Task finished, 11 disciplines were stored on a map.
-[05/12/2024 - 16:04:32]:[Main] Navigating to filter teachers page.
-[05/12/2024 - 16:04:33]:[Main] Navigating to teachers page.
-[05/12/2024 - 16:05:12]:[Main] Navigating to main page.
+[05/12/2024 - 16:17:45]:[Main] Navigating to main page.
+[05/12/2024 - 16:17:49]:[Main] Navigating to administrative technicians page.
+[05/12/2024 - 16:17:49]:[Storage] Starting...
+[05/12/2024 - 16:17:49]:[Storage] Started.
+[05/12/2024 - 16:17:49]:[Storable] Loadded 19 persons.
+[05/12/2024 - 16:17:58]:[Main] Navigating to main page.
+[05/12/2024 - 16:17:59]:[Main] Navigating to add administrative technician page.
+[05/12/2024 - 16:18:57]:[Storage] Tasks were requested.
+[05/12/2024 - 16:18:57]:[Main] Navigating to main page.
+[05/12/2024 - 16:18:58]:[Storage] Task finished, 20 persons were stored in a list.
+[05/12/2024 - 16:18:59]:[Main] Navigating to administrative technicians page.
+[05/12/2024 - 16:19:17]:[Main] Navigating to main page.
+[05/12/2024 - 16:19:23]:[Main] Navigating to filter teachers page.
+[05/12/2024 - 16:19:23]:[Storable] Loadded 11 disciplines.
+[05/12/2024 - 16:19:28]:[Main] Navigating to teachers page.
+[05/12/2024 - 16:19:35]:[Main] Navigation to teacher page.
+[05/12/2024 - 16:19:51]:[Main] Navigating to teachers page.
+[05/12/2024 - 16:19:53]:[Main] Navigating to main page.
+[05/12/2024 - 16:19:59]:[Main] Navigating to search teacher page.
+[05/12/2024 - 16:20:05]:[Storage] Finishing...
+[05/12/2024 - 16:20:05]:[Storage] Finished.

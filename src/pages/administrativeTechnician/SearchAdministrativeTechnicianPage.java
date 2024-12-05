@@ -16,7 +16,7 @@ public class SearchAdministrativeTechnicianPage implements Page {
 
         Long registration = menu.getLong(
             "Matrícula: ", 
-            (t) -> Registrations.validate(t)
+            (t) -> Registrations.validate(t, false)
         );
 
         menu.divider();
