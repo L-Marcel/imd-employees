@@ -41,6 +41,8 @@ Embora todas operações chaves, exceto a de calcular os salários, sejam combin
 
 Você perceberá que existe uma pasta [`src/pages`](src/pages/) que contém todas as simulações de telas para a interface do terminal. As classes desta pasta implementam a interface `Page`, que fornece um método para ser sobrescrito que repassa as instâncias dos objetos `Menu` e `Router`. Ambos são abstrações da biblioteca que desenvolvi, chamada [`JPretty`](https://github.com/L-Marcel/jpretty).
 
+Vale destacar que o `JLine` e `JColor` estão presentes aqui como dependências do `JPretty`.
+
 Toda a documentação do `JPretty` está disponível em: https://jpretty.vercel.app/
 
 Dito isso, não me aprofundarei mais sobre essa biblioteca aqui, mas procurei deixar o nome dos métodos o mais intuitível possível.
