@@ -17,7 +17,7 @@ import java.io.ObjectInputStream;
 public abstract class StorableMap<K extends Serializable, T extends Serializable> implements Serializable {
     private Storage storage = Storage.getInstance();
     private String name;
-    private LinkedHashMap<K, T> instances;
+    protected LinkedHashMap<K, T> instances;
 
     /**
      * Constructor of the class, loads the data from the file
@@ -67,7 +67,7 @@ public abstract class StorableMap<K extends Serializable, T extends Serializable
      */
     public void put(K k, T t) {
         instances.put(k, t);
-        store();
+        this.store();
     };
 
     /**
@@ -76,6 +76,6 @@ public abstract class StorableMap<K extends Serializable, T extends Serializable
      */
     public void remove(K k) {
         instances.remove(k);
-        store();
+        this.store();
     };
 };

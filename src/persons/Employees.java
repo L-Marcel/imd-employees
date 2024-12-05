@@ -65,7 +65,7 @@ public class Employees {
         for (Person person : persons.get()) {
             if (
                 person instanceof Teacher && 
-                person.getRegistration() == registration)
+                person.getRegistration().equals(registration))
              {
                 return (Teacher) person;
             };
@@ -123,7 +123,7 @@ public class Employees {
         for (Person person : persons.get()) {
             if (
                 person instanceof AdministrativeTechnician && 
-                person.getRegistration() == registration)
+                person.getRegistration().equals(registration))
              {
                 return (AdministrativeTechnician) person;
             };

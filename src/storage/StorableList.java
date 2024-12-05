@@ -17,7 +17,7 @@ import java.io.ObjectInputStream;
 public abstract class StorableList<T extends Serializable> implements Serializable {
     private Storage storage = Storage.getInstance();
     private String name;
-    private LinkedList<T> instances;
+    protected LinkedList<T> instances;
 
     /**
      * Constructor of the class, loads the data from the file
@@ -66,7 +66,7 @@ public abstract class StorableList<T extends Serializable> implements Serializab
      */
     public void add(T t) {
         instances.add(t);
-        store();
+        this.store();
     };
 
     /**
@@ -75,7 +75,7 @@ public abstract class StorableList<T extends Serializable> implements Serializab
      */
     public void remove(T t) {
         instances.remove(t);
-        store();
+        this.store();
     };
 
     /**
@@ -87,6 +87,6 @@ public abstract class StorableList<T extends Serializable> implements Serializab
     public void replace(T old, T updated) {
         int index = instances.indexOf(old);
         instances.set(index, updated);
-        store();
+        this.store();
     };
 };

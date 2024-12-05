@@ -9,7 +9,7 @@ public class Registrations {
         if (candidate < 0) throw new InvalidInput("A matrícula deve ser maior ou igual a 0!");
         Persons persons = Persons.getInstance();
         for (Person person : persons.get()) {
-            if (person.getRegistration() == candidate) {
+            if (person.getRegistration().equals(candidate)) {
                 throw new InvalidInput("A matrícula " + candidate + " já está em uso!");
             };
         };

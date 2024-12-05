@@ -8,7 +8,7 @@ public class Main {
         Router router = Router.getInstance();
         router.start(new MainPage());
 
-        // Needed by threads
+        // Needed by the threads and shutdown hook combination
         System.exit(0);
     };
 };

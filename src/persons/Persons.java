@@ -17,7 +17,7 @@ public class Persons extends StorableList<Person> {
     };
 
     /**
-     * Remove an person from the list, update teacher disciplines and request storage.
+     * Remove a person from the list, update teacher disciplines and request storage.
      * @param person - the person
      */
     @Override
@@ -30,6 +30,26 @@ public class Persons extends StorableList<Person> {
             map.decrement(teacher.getDisciplines().toArray(String[]::new));
         };
 
-        store();
+        this.store();
+    };
+
+    /**
+     * Add a person to the list and request storage.
+     * @param person - the person
+     */
+    @Override
+    public void add(Person person) {
+        this.instances.add(person);
+        this.sortByName();
+        this.store();
+    };
+
+    /**
+     * Sort the persons list by the names
+     */
+    private void sortByName() {
+        this.instances.sort((a, b) -> {
+            return a.getName().compareTo(b.getName());
+        });
     };
 };

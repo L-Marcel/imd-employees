@@ -30,7 +30,7 @@ public class Disciplines extends StorableMap<String, Integer> {
      */
     public void decrement(String discipline) {
         Integer count = this.get().getOrDefault(discipline, 0);
-        if (count > 0) {
+        if (count > 1) {
             this.get().put(discipline, count - 1);
         } else {
             this.get().remove(discipline);

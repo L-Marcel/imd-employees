@@ -28,7 +28,7 @@ public class Cpfs {
         if (!formatIsValid) throw new InvalidInput("O CPF deve seguir o formato 000.000.000-00 ou 00000000000!");
         Persons persons = Persons.getInstance();
         for (Person person : persons.get()) {
-            if (person.getCpf() == formattedCandidate) {
+            if (person.getCpf().equals(formattedCandidate)) {
                 throw new InvalidInput("O CPF " + formattedCandidate + " já está em uso!");
             };
         };

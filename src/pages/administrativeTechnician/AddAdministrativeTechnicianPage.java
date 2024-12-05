@@ -91,11 +91,6 @@ public class AddAdministrativeTechnicianPage implements Page {
         );
 
         menu.header("Trabalho");
-        // Double wage = menu.getDouble(
-        //     "Salário (sem os bonus): ", 
-        //     (t) -> Wages.validate(t, 2500d),
-        //     (t) -> Wages.format(t)
-        // );
         String departament = menu.getString(
             "Departamento: ", 
             (t) -> Departaments.validate(t)
